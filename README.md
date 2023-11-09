@@ -4,10 +4,10 @@ Este proyecto consiste en una plataforma web que muestra productos junto con su 
 
 Requisitos y Dependencias:
 
-Este proyecto utiliza el framework Django y está vinculado a una base de datos PostgreSQL. Por lo tanto, se deben instalar tanto Django como el adaptador de base de datos (psycopg2) para utilizar el proyecto.
+Este proyecto utiliza el framework Django y está vinculado a una base de datos PostgreSQL. Por lo tanto, se deben instalar tanto Django como el adaptador de base de datos (psycopg2) para utilizar el proyecto. 
 
  Instrucciones de Uso:
-
+Para crear una cuenta de administrador, escriba en la terminal del editor de codigo el comando py.manage.py createsuperuser y agregue los datos solicitados
 Para agregar categorías y productos, diríjase a la sección de administración de Django y complete los formularios del modelo correspondiente.
 Para navegar por la plataforma, utilice el selector de categorías y presione el botón "Filtrar".
 Tenga en cuenta que el botón "Comprar" es puramente decorativo y no realiza ninguna transacción real.
