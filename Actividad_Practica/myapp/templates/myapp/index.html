@@ -1,0 +1,40 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+
+{% include 'myapp/navbar.html' %}
+
+<title>{{title}}</title>
+
+<form action="{% url 'nuevo' %}" method="GET">
+    {% csrf_token %}
+    <div class="container-fluid">
+        <select class="form-select" aria-label="Default select example" name="Cat">
+            <option selected>Categorias</option>
+            {% for c in categorias %}
+                <option value="{{ c }}">{{c}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success" style="margin: 20px">Filtrar</button>
+
+</form>
+
+<div class="container-fluid">
+    <div class="row">
+        {% for c in productos %}
+        <div class="col-xl-3 col-md-6">
+            <div class="card">
+                <img src="{{c.image_url}}" class="card-img-top" alt="{{c.product_name}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{c.product_name}}</h5>
+                    <p class="card-text">${{c.price}}</p>
+                    <a href="#" class="btn btn-success">Comprar</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
